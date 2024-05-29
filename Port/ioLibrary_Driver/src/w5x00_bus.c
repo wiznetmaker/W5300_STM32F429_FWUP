@@ -65,7 +65,7 @@ void wizchip_initialize(void)
   wizchip_deselect();
 
   /* CS function register */
-  reg_wizchip_cs_cbfunc(wizchip_select, wizchip_deselect);
+  //reg_wizchip_cs_cbfunc(wizchip_select, wizchip_deselect);
 
   /* BUS function register */
   reg_wizchip_bus_cbfunc(wizchip_read, wizchip_write);

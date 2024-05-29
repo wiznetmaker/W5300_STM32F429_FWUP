@@ -61,9 +61,9 @@ SRAM_HandleTypeDef hsram1;
 wiz_NetInfo net_info =
   {
       .mac = {0x00, 0x08, 0xDC, 0x12, 0x34, 0x56}, // MAC address
-      .ip = {192, 168, 11, 100},                     // IP address
+      .ip = {192, 168, 2, 100},                     // IP address
       .sn = {255, 255, 255, 0},                    // Subnet Mask
-      .gw = {192, 168, 11, 1},                     // Gateway
+      .gw = {192, 168, 2, 1},                     // Gateway
       .dns = {8, 8, 8, 8},                         // DNS server
 #ifdef APP_DHCP
       .dhcp = NETINFO_DHCP                         // Dynamic IP
@@ -128,7 +128,7 @@ int main(void)
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
- 
+
   /* Configure the system clock */
   SystemClock_Config();
 
@@ -152,6 +152,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
     switch(getSn_SR(FWUP_SOCKET))
     {
       case SOCK_ESTABLISHED :
@@ -218,7 +220,6 @@ int main(void)
       default:
         break;
      }
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
